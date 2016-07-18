@@ -1,0 +1,211 @@
+/* Font Awesome http://fontawesome.io/ */
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';
+
+/* Page layout */
+body {
+background-repeat: no-repeat;
+background-attachment: fixed;
+height: 100%;
+}
+
+.l-box-e {
+padding: 1em;
+border-style: solid;
+border-color: white;
+border-width: medium;
+}
+
+.content {
+background: rgb(238, 238, 238);
+}
+
+.pure-menu-link {
+color: rgb(238, 238, 238);
+font-weight: 300;
+}
+
+.pure-button {
+border-radius: 100px;
+margin-top: 1.5em;
+}
+
+.pure-input-1 {
+margin-top: 0.7em;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+hr {
+border-top: 1px solid #EEEEEE;
+}
+
+a {
+text-decoration: none;
+color: #4DFFBB;
+}
+
+.clean-text-white {
+text-decoration: none;
+color: #EEEEEE;
+}
+
+.clean-text-white:hover {
+color: #4DFFBB;
+}
+
+/* Header */
+#input_container {
+padding-top: 5%;
+padding-bottom: 5%;
+}
+
+.input_content {
+color: #FFFFFF;
+}
+
+#sc_header_1 {
+font-weight: 300;
+display: inline;
+}
+
+#sc_header_2_lg {
+font-weight: 600;
+display: inline;
+}
+
+#sc_header_2_sm {
+font-weight: 600;
+margin-top: 1em;
+display: block;
+}
+
+/* Description sections */
+.section {
+color: #EEEEEE;
+}
+
+.radium_green {
+color: #4DFFBB;
+}
+
+.thin-text {
+font-weight: 300;
+}
+
+.heavy-text {
+font-weight: 700;
+}
+
+.hr {
+width: 50%;
+border-top: 1px solid transparent;
+}
+
+/* Footer */
+.nav>li>a:focus,
+.nav>li>a:hover {
+text-decoration: none;
+background-color: #333;
+color: #EEEEEE;
+}
+
+/* Night background. Credit to Sylvain Garnot. https://codepen.io/garnotsylvain/ */
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+  position: fixed;
+}
+
+.stars {
+  z-index:-1;
+}
+
+.twinkling{
+  z-index:-1;
+
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}
+
+.clouds{
+    z-index:-1;
+
+  -moz-animation:move-clouds-back 200s linear infinite;
+  -ms-animation:move-clouds-back 200s linear infinite;
+  -o-animation:move-clouds-back 200s linear infinite;
+  -webkit-animation:move-clouds-back 200s linear infinite;
+  animation:move-clouds-back 200s linear infinite;
+}
+
+/* Social Media Bar */
+.social:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
+ .social {
+     -webkit-transform: scale(0.8);
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+ }
+
+ #social-fb:hover {
+     color: #3B5998;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+ }
+ #social-sl:hover {
+     color: #d34836;
+ }
+ #social-tr:hover {
+ color: #0079BF;
+ }
+ #social-em:hover {
+     color: #EEEEEE;
+ }

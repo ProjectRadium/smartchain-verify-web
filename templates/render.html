@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Project Radium">
+    <meta name="description" content="File verification, powered by the Radium SmartChain.">
+    <meta name="keywords" content="">
+	<title>SmartChain Verify</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/pure-min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/grids-responsive-min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/metro.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/metro-schemes.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/metro-responsive.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/metro-rtl.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/marketing.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/render.css') }}">
+    <script type="text/javascript" src="static/js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="static/js/metro.min.js"></script>
+</head>
+<body>
+<!--Ugly in-document styling, because Flask has selective hatred for stylesheets-->
+<style>
+.warning {
+display: block;
+margin: auto;
+font-size: 300px;
+color: #CE352C;
+}
+
+.margin-top-3 {
+margin-top: 3%;
+}
+
+.data-icons {
+display: block;
+margin-bottom: 1.5%;
+}
+
+.clean-text-white {
+text-decoration: none;
+color: #EEEEEE;
+}
+
+.clean-text-black {
+text-decoration: none;
+color: #1D1D1D;
+}
+
+a:visited {
+color: inherit;
+}
+</style>
+<!--If there is an error, return an error page-->
+{% if iserror %}
+<div class="pure-g">
+    <!--Begin night background-->
+    <div class="stars" style="background:#000 url({{ url_for('static', filename='img/stars.png') }}) repeat top center;"></div>
+    <div class="twinkling" style="background:transparent url({{ url_for('static', filename='img/twinkling.png') }}) repeat top center;"></div>
+    <div class="clouds" style="background:transparent url({{ url_for('static', filename='img/clouds-2.png') }}) repeat top center;"></div>
+    <!--End night background-->
+    <div class="splash">
+        <div class="panel drop-shadow">
+            <div class="heading">
+                <!--Message returned, error or success-->
+                <span class="title">{{ message }}</span>
+            </div>
+            <div class="content">
+                <!--In this case, it's an error-->
+                <i class="warning fa fa-exclamation-circle fa-5x"></i>
+            </div>
+        </div>
+        <div class="panel drop-shadow">
+            <div class="heading">
+                <!--Home button-->
+                <span class="title"><a href="/" class="clean-text-white"><i class="fa fa-chevron-left"></i>&nbsp;Home</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Otherwise, return the proper data-->
+{% else %}
+<div class="pure-g">
+    <!--Begin night background-->
+    <div class="stars" style="background:#000 url({{ url_for('static', filename='img/stars.png') }}) repeat top center;"></div>
+    <div class="twinkling" style="background:transparent url({{ url_for('static', filename='img/twinkling.png') }}) repeat top center;"></div>
+    <div class="clouds" style="background:transparent url({{ url_for('static', filename='img/clouds-2.png') }}) repeat top center;"></div>
+    <!--End night background-->
+    <div class="splash" style="position: relative;">
+        <div class="panel drop-shadow">
+            <div class="heading">
+                <!--Message returned, error or success-->
+                <span class="title">{{ message }}</span>
+            </div>
+        </div>
+        <!--In this case, it's a success-->
+        <!--So, we return the proper information-->
+        <!--Begin file title-->
+        <div class="margin-top-3 panel drop-shadow">
+            <div class="heading">
+                <span class="title">Title</span>
+            </div>
+            <div class="content">
+                <i class="data-icons fa fa-file-text fa-5x"></i>
+                {{ title }}
+            </div>
+        </div>
+        <!--End file title-->
+        <!--Begin user data-->
+        <div class="panel drop-shadow">
+            <div class="heading">
+                <span class="title">User</span>
+            </div>
+            <div class="content">
+                <i class="data-icons fa fa-user fa-5x"></i>
+                {{ user }}
+            </div>
+        </div>
+        <!--End user data-->
+        <div class="grid">
+            <div class="row cells2">
+                <div class="cell">
+                    <!--Begin time data-->
+                    <div class="panel drop-shadow">
+                        <div class="heading">
+                            <span class="title">Time</span>
+                        </div>
+                        <div class="content">
+                            <i class="data-icons fa fa-clock-o fa-5x"></i>
+                            {{ timestamp }}
+                        </div>
+                    </div>
+                    <!--End time data-->
+                </div>
+                <div class="cell">
+                    <!--Begin download button-->
+                    <div class="panel drop-shadow">
+                        <div class="heading">
+                            <a href="{{ url }}" target="_blank" class="clean-text-white"><span class="title">Download</span></a>
+                        </div>
+                        <div class="content">
+                            <a href="{{ url }}" target="_blank" class="clean-text-black"><i class="data-icons fa fa-download fa-5x"></i></a>
+                            Download from {{ domain }}
+                        </div>
+                    </div>
+                    <!--End download button-->
+                </div>
+            </div>
+        </div>
+        <div class="panel drop-shadow">
+            <div class="heading">
+                <!--Home button-->
+                <span class="title" style=""><a href="/" class="clean-text-white"><i class="fa fa-chevron-left"></i>&nbsp;Home</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+</body>
+</html>

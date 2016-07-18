@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Project Radium">
+    <meta name="description" content="File verification, powered by the Radium SmartChain.">
+    <meta name="keywords" content="">
+	<title>SmartChain Verify</title>
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="SmartChain Verify">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.verify.software">
+    <meta property="og:image" content="{{ url_for('static', filename='img/smartchain-2.png') }}">
+    <meta property="og:description"
+        content="Fast, easy and secure file verification, powered by the Radium SmartChain.">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/pure-min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/grids-responsive-min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/marketing.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="static/js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="static/js/main.js"></script>
+</head>
+<!--data-spy is scroll for smooth scrolling as outlined in main.js-->
+<body data-spy="scroll">
+<!--Begin night background-->
+<div class="stars" style="background:#000 url({{ url_for('static', filename='img/stars.png') }}) repeat top center;"></div>
+<div class="twinkling" style="background:transparent url({{ url_for('static', filename='img/twinkling.png') }}) repeat top center;"></div>
+<div class="clouds" style="background:transparent url({{ url_for('static', filename='img/clouds-2.png') }}) repeat top center;"></div>
+<!--End night background-->
+<!--Begin input and header-->
+<div class="cover">
+    <div class="container" id="input_container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <!--Logo-->
+                <img class="pure-img-responsive" src="static/img/smartchain-2.png">
+                <!--Header-->
+                <div class="content-head">
+                    <h2 class="input_content content-head" id="sc_header_1">Smartchain&nbsp;</h2>
+                    <!--Mobile formatting-->
+                    <h2 class="input_content hidden-sm hidden-xs content-head" id="sc_header_2_lg">Verify</h2>
+                    <h2 class="input_content hidden-lg hidden-md content-head" id="sc_header_2_sm">Verify</h2>
+                </div>
+                <!--Input-->
+                <form class="pure-form" action="." method="POST">
+                    <fieldset>
+                        <input class="pure-input-1 pure-input-rounded" type="search" name="search" placeholder="Enter a link to verify...">
+                        <button type="submit" name="submit_search" class="pure-button">
+                            <i class="fa fa-check fa-lg"></i>
+                            Verify
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End input and header-->
+<!--Begin FAST section-->
+<div class="section">
+    <!--Scrolling link-->
+    <a name="fast"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 text-center">
+                <!--Icon-->
+                <span class="radium_green fa-stack fa-4x">
+                    <i class="fa fa-rocket fa-stack-1x"></i>
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                </span>
+                <!--Heading-->
+                <h1 class="thin-text">FAST</h1>
+            </div>
+            <div class="col-md-6 text-center">
+                <!--Description-->
+                <h1 class="heavy-text">Verify nearly any downloadable file within seconds.</h1>
+                <h1 class="thin-text">Up to 50 Megabytes at a time.</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="hr"/>
+<!--End FAST section-->
+<!--Begin EASY section-->
+<div class="section">
+    <!--Scrolling link-->
+    <a name="easy"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 text-center">
+                <!--Icon-->
+                <span class="radium_green fa-stack fa-4x">
+                    <i class="fa fa-magic fa-stack-1x"></i>
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                </span>
+                <!--Heading-->
+                <h1 class="thin-text">EASY</h1>
+            </div>
+            <div class="col-md-6 text-center">
+                <!--Description-->
+                <h1 class="heavy-text">All it takes is</h1>
+                <h1 class="thin-text">Copy&nbsp;<i class="fa fa-angle-right"></i>&nbsp;Paste&nbsp;<i class="fa fa-angle-right"></i>&nbsp;Click.</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="hr"/>
+<!--End EASY section-->
+<!--Begin SECURE section-->
+<div class="section">
+    <!--Scrolling link-->
+    <a name="secure"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 text-center">
+                <!--Icon-->
+                <span class="radium_green fa-stack fa-4x">
+                    <i class="fa fa-lock fa-stack-1x"></i>
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                </span>
+                <!--Heading-->
+                <h1 class="thin-text">SECURE</h1>
+            </div>
+            <div class="col-md-6 text-center">
+                <!--Description-->
+                <h1 class="heavy-text">Industry proven blockchain</h1>
+                <h1 class="thin-text">technology at the core.</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="hr"/>
+<!--End SECURE section-->
+<!--Begin MORE section-->
+<div class="section">
+    <!--Scrolling link-->
+    <a name="more"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="heavy-text">Want to learn more?</h1>
+                <h2 class="thin-text">Check out our&nbsp;<a href="https://en.wikibooks.org/wiki/Radium_SmartChain/SmartChain_Verify_Docs" target="_blank" class="clean-text-white"><u>documentation</u></a>.</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="hr"/>
+<!--End MORE section-->
+<!--Begin footer-->
+<div class="container text-center" style="width: 100%;">
+    <hr />
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="http://www.projectradium.org" target="_blank">About us</a></li>
+          <li><a href="https://github.com/ProjectRadium" target="_blank">Github</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="https://blog.projectradium.org" target="_blank">Blog</a></li>
+          <li><a href="/enterprise">Enterprise</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="https://en.wikibooks.org/wiki/Radium_SmartChain" target="_blank">Wiki</a></li>
+          <li><a href="https://en.wikibooks.org/wiki/Radium_SmartChain/SmartChain_Verify_Docs" target="_blank">Documentation</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="https://en.wikibooks.org/wiki/Radium_SmartChain/FAQs" target="_blank">FAQ</a></li>
+          <li><a href="https://bitcointalk.org/index.php?topic=1333026.0" target="_blank">Forum</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr>
+    <div class="row" style="margin-bottom: 2%">
+        <div class="col-lg-12">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="/">&copy; 2016 Project Radium, LLC</a></li>
+                <!--Social Media-->
+                <li>
+                    <div class="text-center center-block">
+                        <a href="https://www.facebook.com/ProjectRadium" target="_blank"><i id="social-fb" class="fa fa-facebook-f fa-3x social"></i></a>
+                        <a href="https://twitter.com/ProjectRadium" target="_blank"><i id="social-tw" class="fa fa-twitter fa-3x social"></i></a>
+                        <a href="http://slack.projectradium.org" target="_blank"><i id="social-sl" class="fa fa-slack fa-3x social"></i></a>
+                        <a href="https://trello.com/b/30R6sCZa" target="_blank"><i id="social-tr" class="fa fa-trello fa-3x social"></i></a>
+                        <a href="mailto:contact@projectradium.org" target="_blank"><i id="social-em" class="fa fa-envelope fa-3x social"></i></a>
+                    </div>
+                </li>
+                <li><a href="/">SmartChain&trade; 2016 SmartChain Software Solutions, LLC</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--End footer-->
+</body>
+</html>
