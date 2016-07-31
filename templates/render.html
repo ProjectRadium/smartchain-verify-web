@@ -120,7 +120,7 @@ color: inherit;
         </div>
         <!--End user data-->
         <div class="grid">
-            <div class="row cells2">
+            <div class="row cells3">
                 <div class="cell">
                     <!--Begin time data-->
                     <div class="panel drop-shadow">
@@ -147,16 +147,31 @@ color: inherit;
                     </div>
                     <!--End download button-->
                 </div>
+                <div class="cell">
+                    <!--Begin link copy button-->
+                    <div class="panel drop-shadow">
+                        <div class="heading">
+                            <span class="clean-text-white title">Copy Verify Link</span>
+                        </div>
+                        <div class="content">
+                            <button id="copy-button" data-clipboard-action="copy" data-clipboard-text="https://www.verify.software/link?link={{ url }}"><i class="clean-black-text data-icons fa fa-link fa-5x"></i></button>
+                            Copy the link to this Verify profile
+                        </div>
+                    </div>
+                    <!--End link copy button-->
+                </div>
             </div>
         </div>
         <div class="panel drop-shadow">
             <div class="heading">
                 <!--Home button-->
-                <span class="title" style=""><a href="/" class="clean-text-white"><i class="fa fa-chevron-left"></i>&nbsp;Home</a></span>
+                <span class="title"><a href="/" class="clean-text-white"><i class="fa fa-chevron-left"></i>&nbsp;Home</a></span>
             </div>
         </div>
     </div>
 </div>
 {% endif %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+<script type="text/javascript" src="static/js/main.js"></script>
 </body>
 </html>

@@ -13,3 +13,8 @@ $(function() {
         }
     });
 });
+
+// Copy to clipboard on click using clipboard.js
+(function(){
+    new Clipboard('#copy-button');
+})();

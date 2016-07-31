@@ -56,6 +56,14 @@ background-color: #212121;
 color: #EEEEEE;
 }
 
+/* Copy link button styling */
+#copy-button {
+border: none;
+background: none;
+display: block;
+margin: auto;
+}
+
 /* Night background. Credit to Sylvain Garnot. https://codepen.io/garnotsylvain/ */
 @keyframes move-twink-back {
     from {background-position:0 0;}
