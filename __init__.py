@@ -12,7 +12,7 @@ app = flask.Flask(__name__)
 # Index route: renders the landing/home page from templates.
 @app.route("/")
 def index():
-    return flask.render_template("index.html", isform=False)
+    return flask.render_template("_index.html", isform=False)
 
 # Enterprise route: this will be expanded upon in the future.
 @app.route("/enterprise")

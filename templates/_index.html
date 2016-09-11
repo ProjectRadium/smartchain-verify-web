@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% block stars %}
+<!--Begin night background-->
+<div class="stars" style="background:#000 url({{ url_for('static', filename='img/stars.png') }}) repeat top center;"></div>
+<div class="twinkling" style="background:transparent url({{ url_for('static', filename='img/twinkling.png') }}) repeat top center;"></div>
+<div class="clouds" style="background:transparent url({{ url_for('static', filename='img/clouds-2.png') }}) repeat top center;"></div>
+<!--End night background-->
+{% endblock %}
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Project Radium">
+    <meta name="description" content="File verification, powered by the Radium SmartChain.">
+    <meta name="keywords" content="">
+	<title>SmartChain Verify</title>
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="SmartChain Verify">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.verify.software">
+    <meta property="og:image" content="{{ url_for('static', filename='img/smartchain-2.png') }}">
+    <meta property="og:description"
+        content="Fast, easy and secure file verification, powered by the Radium SmartChain.">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/pure-min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/grids-responsive-min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/marketing.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="static/js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="static/js/main.js"></script>
+</head>
+{% endblock %}
+{% block icons %}
+<span class="radium_green fa-stack fa-4x">
+    {{ super() }}
+    <i class="fa fa-circle-thin fa-stack-2x"></i>
+</span>
+{% endblock %}
