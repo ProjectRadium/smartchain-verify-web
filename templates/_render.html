@@ -14,7 +14,11 @@
     <meta name="author" content="Project Radium">
     <meta name="description" content="File verification, powered by the Radium SmartChain.">
     <meta name="keywords" content="">
-	<title>{{ title }} - SmartChain Verify</title>
+    {% if iserror %}
+	    <title>{{ message }} - SmartChain Verify</title>
+    {% else %}
+        <title>{{ title }} - SmartChain Verify</title>
+    {% endif %}
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/pure-min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/grids-responsive-min.css') }}">
