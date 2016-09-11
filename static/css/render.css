@@ -1,11 +1,12 @@
 /* Font Awesome */
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';
+
 /* Raleway Font */
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 
 /* Page layout */
 body {
-font-family: 'Raleway', sans-serif;
+font-family: 'Raleway', Helvetica, sans-serif;
 background-repeat: no-repeat;
 background-attachment: fixed;
 background: #000;
