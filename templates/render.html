@@ -39,6 +39,8 @@ color: inherit;
     {% block stars %}{% endblock %}
     {% if iserror %}
         {% block error %}{% endblock %}
+    {% elif do_confirm %}
+        {% block confirm %}{% endblock %}
     {% else %}
         {% block success %}{% endblock %}
     {% endif %}

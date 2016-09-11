@@ -32,6 +32,8 @@ def verify_doc_post():
 
     if api_response['error']:
         return flask.render_template(html_name, message=api_response['message'], iserror=True, isform=True)
+    elif api_response['code'] == 1:
+        return flask.render_template(html_name, url=url, domain=core.core().get_domain(url), message=api_response['message'], user=api_response['data']['username'], title=api_response['data']['title'], timestamp=api_response['data']['timestamp_utc'], isuserverified=api_response['data']['user_verified'], iserror=False, isform=True, do_confirm=True)
     else:
         return flask.render_template(html_name, url=url, domain=core.core().get_domain(url), message=api_response['message'], user=api_response['data']['username'], title=api_response['data']['title'], timestamp=api_response['data']['timestamp_utc'], isuserverified=api_response['data']['user_verified'], iserror=False, isform=True)
 
@@ -46,6 +48,8 @@ def verify_button(link=False):
 
     if api_response['error']:
         return flask.render_template("_render.html", message=api_response['message'], iserror=True, isform=True)
+    elif api_response['code'] == 1:
+        return flask.render_template("_render.html", url=link, domain=core.core().get_domain(url), message=api_response['message'], user=api_response['data']['username'], title=api_response['data']['title'], timestamp=api_response['data']['timestamp_utc'], isuserverified=api_response['data']['user_verified'], iserror=False, isform=True, do_confirm=True)
     else:
         return flask.render_template("_render.html", url=link, domain=core.core().get_domain(link), message=api_response['message'], user=api_response['data']['username'], title=api_response['data']['title'], timestamp=api_response['data']['timestamp_utc'], isuserverified=api_response['data']['user_verified'], iserror=False, isform=True)
 
