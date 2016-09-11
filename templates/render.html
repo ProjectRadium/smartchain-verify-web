@@ -56,11 +56,7 @@ color: inherit;
 <!--If there is an error, return an error page-->
 {% if iserror %}
 <div class="pure-g">
-    <!--Begin night background-->
-    <div class="stars" style="background:#000 url({{ url_for('static', filename='img/stars.png') }}) repeat top center;"></div>
-    <div class="twinkling" style="background:transparent url({{ url_for('static', filename='img/twinkling.png') }}) repeat top center;"></div>
-    <div class="clouds" style="background:transparent url({{ url_for('static', filename='img/clouds-2.png') }}) repeat top center;"></div>
-    <!--End night background-->
+    {% block stars %}{% endblock %}
     <div class="splash">
         <div class="panel drop-shadow">
             <div class="heading">
@@ -83,11 +79,7 @@ color: inherit;
 <!--Otherwise, return the proper data-->
 {% else %}
 <div class="pure-g">
-    <!--Begin night background-->
-    <div class="stars" style="background:#000 url({{ url_for('static', filename='img/stars.png') }}) repeat top center;"></div>
-    <div class="twinkling" style="background:transparent url({{ url_for('static', filename='img/twinkling.png') }}) repeat top center;"></div>
-    <div class="clouds" style="background:transparent url({{ url_for('static', filename='img/clouds-2.png') }}) repeat top center;"></div>
-    <!--End night background-->
+    {{ self.stars() }}
     <div class="splash" style="position: relative;">
         <div class="panel drop-shadow">
             <div class="heading">

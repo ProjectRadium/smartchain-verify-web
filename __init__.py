@@ -22,11 +22,11 @@ def enterprise():
 # Index route: renders output from API when input is posted.
 @app.route("/", methods=['POST'])
 def verify_doc_post():
-    html_name = "render.html"
+    html_name = "_render.html"
 
     url = flask.request.form['search']
     if url == "":
-        return flask.render_template("index.html", isform=False)
+        return flask.render_template("_index.html", isform=False)
     else:
         api_response = core.core().process_data(url)
 
@@ -40,14 +40,14 @@ def verify_doc_post():
 def verify_button(link=False):
     link = flask.request.args.get('link')
     if not link:
-        return flask.render_template("index.html", isform=False)
+        return flask.render_template("_index.html", isform=False)
     else:
         api_response = core.core().process_data(link)
 
     if api_response['error']:
-        return flask.render_template("render.html", message=api_response['message'], iserror=True, isform=True)
+        return flask.render_template("_render.html", message=api_response['message'], iserror=True, isform=True)
     else:
-        return flask.render_template("render.html", url=link, domain=core.core().get_domain(link), message=api_response['message'], user=api_response['data']['username'], title=api_response['data']['title'], timestamp=api_response['data']['timestamp_utc'], isuserverified=api_response['data']['user_verified'], iserror=False, isform=True)
+        return flask.render_template("_render.html", url=link, domain=core.core().get_domain(link), message=api_response['message'], user=api_response['data']['username'], title=api_response['data']['title'], timestamp=api_response['data']['timestamp_utc'], isuserverified=api_response['data']['user_verified'], iserror=False, isform=True)
 
 # Run app
 if __name__ == '__main__':
