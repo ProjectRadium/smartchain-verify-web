@@ -67,7 +67,7 @@ class core():
             is_verified = data['result']['verified']
             if is_verified == 'true': # If is_verified then we can look for the address
                 address = data['result']['address']
-                address_data =  ast.literal_eval(self.get_api_data("address", address))
+                address_data = ast.literal_eval((self.get_api_data("address", address).replace('\n', '').replace('\r', '').replace("null", '"None"').replace("true", '"True"').replace("false", '"False"')))
                 if address_data['verified'] == 'True':
                     return True
                 else:
@@ -98,8 +98,8 @@ class core():
                                     'username':api_data['username'],
                                     'user_verified':True,
                                     'title':api_data['title'],
-                                    'timestamp':api_data['linuxtime'],
-                                    'timestamp_utc':self.get_utc_from_unix(api_data['linuxtime']),
+                                    'timestamp':api_data['date'],
+                                    'timestamp_utc':self.get_utc_from_unix(api_data['date']),
                                     'block':api_data['block']
                                 }
                             }
@@ -113,8 +113,8 @@ class core():
                                     'username': api_data['username'],
                                     'user_verified': False,
                                     'title': api_data['title'],
-                                    'timestamp': api_data['linuxtime'],
-                                    'timestamp_utc': self.get_utc_from_unix(api_data['linuxtime']),
+                                    'timestamp': api_data['date'],
+                                    'timestamp_utc': self.get_utc_from_unix(api_data['date']),
                                     'block': api_data['block']
                                 }
                             }
