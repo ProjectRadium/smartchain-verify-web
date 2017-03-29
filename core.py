@@ -38,21 +38,12 @@ class core():
         return requests.head(url).headers
 
     def is_file_under_limit(self, url):
-        if url[:8] == 'https://':
-            req = urllib2.Request(url, headers={'User-Agent': 'Magic Browser'})
-            con = urllib2.urlopen(req)
-            if int(con.info().getheaders("Content-Length")[0]) <= self.file_size_limit:
-                return True
-            else:
-                return False
+        req = urllib2.Request(url, headers={'User-Agent': 'Magic Browser'})
+        con = urllib2.urlopen(req)
+        if int(con.info().getheaders("Content-Length")[0]) <= self.file_size_limit:
+            return True
         else:
-            file_headers = self.get_file_headers(url)
-            for s in file_headers:
-                    if s == 'Content-Length':
-                        if int(file_headers[s]) <= self.file_size_limit:
-                            return True
-            else:
-                return False
+            return False
 
     def get_file_contents(self, url):
         return requests.get(url).content
